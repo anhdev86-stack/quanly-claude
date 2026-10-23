@@ -1,0 +1,54 @@
+{
+  "name": "claude-account-switcher",
+  "version": "0.1.0",
+  "description": "Switch between Claude Code accounts you own, without logging out and back in",
+  "main": "out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "pack:win": "npm run build && electron-builder --win --publish never",
+    "pack:mac": "npm run build && electron-builder --mac --publish never",
+    "pack:all": "npm run build && electron-builder --win --mac --publish never"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "build": {
+    "appId": "dev.local.claude-account-switcher",
+    "productName": "Claude Account Switcher",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.developer-tools"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+out/
+release/
+*.log
+*.tsbuildinfo
+
+# Vault lives in the OS userData dir, never in the repo. Listed so a stray
+# copy pasted in for debugging can never be committed by accident.
+vault.json

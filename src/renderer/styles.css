@@ -1,0 +1,256 @@
+:root {
+  --bg: #14120f;
+  --panel: #1e1b17;
+  --line: #322d26;
+  --text: #ece7e0;
+  --muted: #9b9287;
+  --accent: #d2906a;
+  --danger: #d2665a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+.app {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 28px 24px 56px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+section {
+  margin-top: 28px;
+}
+
+section h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.banner {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  margin-bottom: 12px;
+}
+
+.banner.error {
+  border-color: var(--danger);
+  color: #ffd9d4;
+  background: #2a1b19;
+}
+
+.banner.warn {
+  border-color: #b8893a;
+  background: #2a2317;
+}
+
+.banner.info {
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.banner code {
+  color: var(--accent);
+}
+
+.banner.suggest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--panel);
+  border-color: var(--accent);
+}
+
+table.usage {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table.usage th,
+table.usage td {
+  text-align: right;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+table.usage th:first-child,
+table.usage td:first-child {
+  text-align: left;
+  font-variant-numeric: normal;
+}
+
+table.usage th {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+table.usage tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table.usage tr.active td:first-child {
+  color: var(--accent);
+}
+
+.status {
+  display: flex;
+  gap: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.status .k {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.status .v {
+  font-variant-numeric: tabular-nums;
+}
+
+ul.profiles,
+ul.sessions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+ul.profiles li,
+ul.sessions li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+ul.profiles li.active {
+  border-color: var(--accent);
+}
+
+.info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.info strong {
+  font-weight: 550;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info small {
+  color: var(--muted);
+  flex: none;
+}
+
+.pill {
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 1px 7px;
+  flex: none;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex: none;
+}
+
+button {
+  font: inherit;
+  padding: 5px 11px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #1a140f;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+button.ghost.danger:hover:not(:disabled) {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.capture {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.capture input {
+  flex: 1;
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.empty,
+.hint {
+  color: var(--muted);
+  margin: 6px 0;
+}
+
+ul.sessions code {
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  flex: none;
+}
